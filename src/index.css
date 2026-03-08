@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* 2ba Air Navy & Red Theme */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --primary: 222 68% 14%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --ring: 222 68% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 68% 14%;
+    --accent: 210 20% 94%;
+    --accent-foreground: 222 68% 14%;
+    --destructive: 358 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 214 32% 91%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 17%;
+    --ring: 212 27% 38%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 358 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 217 33% 17%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+}
+@layer components {
+  /* HVAC Layout Utilities */
+  .hvac-section-divider {
+    @apply relative overflow-hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .hvac-pattern-airflow {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 9.45c-2.33-1.84-5.32-2.85-8.42-2.85-6.61 0-11.98 5.37-11.98 11.98 0 3.1.53 6.01 1.51 8.65L2.27 54.49c-.39.39-.39 1.02 0 1.41.2.2.45.29.71.29s.51-.1.71-.29l33.45-33.45c2.64.98 5.55 1.51 8.65 1.51 6.61 0 11.98-5.37 11.98-11.98 0-3.1-1.01-6.09-2.85-8.42zM45.77 22c-5.5 0-9.98-4.48-9.98-9.98 0-1.81.49-3.5 1.33-4.96.65.65 1.41 1.21 2.26 1.66-.41 1.02-.63 2.13-.63 3.3 0 4.41 3.58 7.99 7.99 7.99 1.17 0 2.28-.22 3.3-.63.45.85 1.01 1.61 1.66 2.26-1.46.84-3.15 1.33-4.96 1.33z' fill='%23163B78' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  .hvac-pattern-blueprint {
+    background-image: radial-gradient(circle, #163B78 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.05;
+  }
+  .hvac-cta-red {
+    @apply bg-destructive text-destructive-foreground hover:brightness-110 shadow-destructive transition-all duration-200 active:scale-95;
+  }
+  .hvac-cta-navy {
+    @apply bg-primary text-primary-foreground hover:brightness-125 shadow-primary transition-all duration-200 active:scale-95;
+  }
+}
